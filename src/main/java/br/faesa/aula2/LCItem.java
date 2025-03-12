@@ -37,13 +37,13 @@ public class LCItem {
         return this.lista[posicao];
     }
 
-    public Item pesquisa(Item cod) {
+    public int pesquisa(int cod) {
         for (int i = 0; i < this.tamanho(); i++) {
-            if (this.lista[i] == cod) {
-                return this.lista[i];
+            if (this.lista[i].getCodigo() == cod) {
+                return i;
             }
-            return -1;
         }
+        return -1;
     }
 
 
