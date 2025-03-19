@@ -38,14 +38,80 @@ public class LCItem {
     }
 
     public int pesquisa(int cod) {
-        for (int i = 0; i < this.tamanho(); i++) {
+        for (int i = 0; i < this.quant; i++) {
             if (this.lista[i].getCodigo() == cod) {
-                return i;
+                return i; //achou o codigo e retorna posicao
             }
         }
-        return -1;
+        return -1; //terminou for e nao achou
+    }
+    /*
+    insereFim (Item) => insere um Item no final da lista. Se ela estiver cheia, deve aumentar o tamanho em 50%.
+     */
+
+    private void aumentaLista() {
+        int novoTamanho = (int) (this.quant * 1.5);
+        Item[] novaLista = new Item[novoTamanho];
+        for (int i = 0; i < quant; i++) {
+            novaLista[i] = this.lista[i];
+        }
+        this.lista = novaLista;
     }
 
+    public void insereFim (Item item) {
+        if (eCheia()) {
+            aumentaLista();
+        }
+        this.lista[quant] = item;
+        this.quant++;
+    }
+
+    /*
+    insere (Item, posicao) => insere um Item em uma posição da lista, deslocando todos os elementos que estiverem após essa posição para o índice seguinte, retornando true. Se a lista estiver cheia, deve aumentar a lista em 50%. Se a posição for inválida (menor que zero ou maior que quant), deve retornar false.
+     */
+
+    public boolean insere (int position, Item item) {
+        if (position < 0 || position >= this.quant) { //a lista só pode ser preenchida continuamente
+            return false;
+        }
+        if (eCheia()) {
+            aumentaLista();
+        }
+        //deslocar itens da lista
+        for (int i = this.quant - 1; i >= position ; i--) {
+            this.lista[i+1] = this.lista[i];
+        }
+        this.lista[position] = item;
+        this.quant++;
+        return true;
+    }
+
+    public void insereInicio (Item item) {
+        insere(0, item);
+    }
+
+    /*
+    remove (pos) => deve remover um elemento que está na posição pos da lista. Se conseguir, deve retornar o Item removido, se não conseguir, retorna null.
+     */
+    public Item remover(int posicao) {
+        if (posicao < 0 || posicao >= this.quant) {
+            return null;
+        }
+        //continuar ...
+        return this.lista[posicao];
+    }
+
+    /*
+    remove (cod) => deve remover da lista o elemento cujo código é cod. Se conseguir, deve retornar o Item removido, se não conseguir, retorna null.
+     */
+
+
+
+
+    /*
+    toString() => retornar uma String contendo todos os elementos da lista, do primeiro até o último.
+     */
 
 
 }
+
