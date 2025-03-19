@@ -94,20 +94,31 @@ public class LCItem {
     remove (pos) => deve remover um elemento que está na posição pos da lista. Se conseguir, deve retornar o Item removido, se não conseguir, retorna null.
      */
     public Item remover(int posicao) {
+        Item aux;
         if (posicao < 0 || posicao >= this.quant) {
             return null;
         }
-        //continuar ...
-        return this.lista[posicao];
+        aux = this.lista[posicao];
+        for (int i = posicao; i < this.quant - 1; i++) {
+            this.lista[i] = this.lista[i+1];
+        }
+        quant--;
+        this.lista[this.quant - 1] = null; //limpa a última pos
+
+        return aux;
     }
 
     /*
     remove (cod) => deve remover da lista o elemento cujo código é cod. Se conseguir, deve retornar o Item removido, se não conseguir, retorna null.
      */
 
-
-
-
+    public Item removerCod(int cod) {
+        int posicao = pesquisa(cod);
+        if (posicao == -1) {
+            return null;
+        }
+        return remover(posicao);
+    }
     /*
     toString() => retornar uma String contendo todos os elementos da lista, do primeiro até o último.
      */
