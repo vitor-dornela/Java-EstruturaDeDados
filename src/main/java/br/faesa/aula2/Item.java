@@ -22,7 +22,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return "{" +
                 "codigo=" + codigo +
                 ", nome='" + nome + '\'' +
                 '}';
