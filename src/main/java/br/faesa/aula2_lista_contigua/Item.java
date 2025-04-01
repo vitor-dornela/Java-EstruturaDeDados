@@ -1,4 +1,4 @@
-package br.faesa.aula2;
+package br.faesa.aula2_lista_contigua;
 
 public class Item {
     int codigo;

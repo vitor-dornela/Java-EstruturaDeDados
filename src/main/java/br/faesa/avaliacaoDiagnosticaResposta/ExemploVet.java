@@ -1,5 +1,7 @@
-package teste;
-import diagnostico.*;
+package br.faesa.avaliacaoDiagnosticaResposta;
+
+import br.faesa.avaliacaoDiagnostica.VetInt;
+
 public class ExemploVet {
 
 	public static void main(String[] args) {
