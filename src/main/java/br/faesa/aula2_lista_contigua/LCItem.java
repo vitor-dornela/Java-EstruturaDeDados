@@ -71,7 +71,7 @@ public class LCItem {
      */
 
     public boolean insere (int position, Item item) {
-        if (position < 0 || position >= this.quant) { //a lista só pode ser preenchida continuamente
+        if (position < 0 || position > this.quant) { //a lista só pode ser preenchida continuamente
             return false;
         }
         if (eCheia()) {
@@ -123,6 +123,13 @@ public class LCItem {
     toString() => retornar uma String contendo todos os elementos da lista, do primeiro até o último.
      */
 
+    public String toString () {
+        String aux = "";
+        for (int i=0; i<this.quant; i++) {
+            aux += this.lista[i].toString()+"\n";
+        }
+        return aux;
+    }
 
 }
 
