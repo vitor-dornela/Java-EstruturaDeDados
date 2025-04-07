@@ -110,27 +110,28 @@ public class InOut {
 	 * @param frase que sera usada para o usuario saber qual dado sera lido
 	 * @return um objeto do tipo int
 	 */
-	public static int leInt (String frase){
+	public static int leInt(String frase) {
 		int num = 0;
 		String Entrada;
 		boolean ERRO;
-		
-		do{
-			try{
-				Entrada = JOptionPane.showInputDialog (null, frase, "Entrada de dados", 
-						   								JOptionPane.QUESTION_MESSAGE);
+
+		do {
+			Entrada = JOptionPane.showInputDialog(null, frase, "Entrada de dados", JOptionPane.QUESTION_MESSAGE);
+			if (Entrada == null) { // Se o usuário fechar ou cancelar
+				System.exit(0);  // Finaliza o programa
+			}
+			try {
 				num = Integer.parseInt(Entrada);
 				ERRO = false;
-			}
-			catch(Exception e){
-				JOptionPane.showMessageDialog(null, "VALOR DEVE SER UM NUMERO DO TIPO " +
-											  "INTEIRO ", "   >>>      ERRO     <<<", 
-											  JOptionPane.ERROR_MESSAGE);
+			} catch(Exception e) {
+				JOptionPane.showMessageDialog(null, "VALOR DEVE SER UM NUMERO DO TIPO INTEIRO", "   >>>      ERRO     <<<", JOptionPane.ERROR_MESSAGE);
 				ERRO = true;
 			}
-		}while (ERRO);		
+		} while (ERRO);
+
 		return num;
 	}
+
 	
 	/**
 	 * Este metodo e para entrada de um objeto do tipo long. Tem como parametro 

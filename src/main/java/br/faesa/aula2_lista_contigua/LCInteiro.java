@@ -127,5 +127,69 @@ public class LCInteiro {
 		}
 		return aux;
 	}
-	
+
+
+	public LCInteiro concatena(LCInteiro outra) {
+		// Cria uma nova lista com capacidade para todos os elementos
+		LCInteiro nova = new LCInteiro(this.getQuant() + outra.getQuant());
+
+		// Copia os elementos da lista objeto
+		for (int i = 0; i < this.getQuant(); i++) {
+			nova.insereFinal(this.get(i));
+		}
+
+		// Copia os elementos da lista passada como parâmetro
+		for (int i = 0; i < outra.getQuant(); i++) {
+			nova.insereFinal(outra.get(i));
+		}
+
+		return nova;
+	}
+
+
+	public boolean igual(LCInteiro outra) {
+		if (outra == null) {
+			return false;
+		}
+		// Se a quantidade de elementos for diferente, as listas não são iguais.
+		if (this.getQuant() != outra.getQuant()) {
+			return false;
+		}
+		// Compara cada elemento na mesma posição.
+		for (int i = 0; i < this.getQuant(); i++) {
+			Integer elementoThis = this.get(i);
+			Integer elementoOutra = outra.get(i);
+			// Verifica se os elementos são ambos nulos ou se são iguais.
+			if (elementoThis == null) {
+				if (elementoOutra != null) {
+					return false;
+				}
+			} else if (!elementoThis.equals(elementoOutra)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+
+	public boolean estaContida(LCInteiro outra) {
+		// Para cada elemento da lista objeto
+		for (int i = 0; i < this.getQuant(); i++) {
+			// Obtém o elemento da posição i
+			int valor = this.get(i);
+			// Se o elemento não for encontrado na lista parâmetro, retorna false
+			if (outra.pesquisa(valor) == -1) {
+				return false;
+			}
+		}
+		// Se todos os elementos foram encontrados, retorna true
+		return true;
+	}
+
+
+
+
+
+
+
 }
