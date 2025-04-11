@@ -9,6 +9,11 @@ public class Item {
         this.nome = nome;
     }
 
+    public Item(int codigo) {
+        this.codigo = codigo;
+        this.nome = "";
+    }
+
     public int getCodigo() {
         return codigo;
     }
