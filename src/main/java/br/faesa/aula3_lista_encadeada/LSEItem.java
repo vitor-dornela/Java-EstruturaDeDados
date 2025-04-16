@@ -12,27 +12,27 @@ public class LSEItem {
 		this.quant = 0;
 	}
 	
-	public int tamanho () {
+	public int tamanho() {
 		return this.quant;
 	}
 	
 	public boolean eVazia() {
-		return (quant==0);
+		return (quant==0); // true se = 0, false se != 0
 	}
 	
 	public NoItem get (int pos) {
 		NoItem aux;
 		// verificar se a posicao e valida
 		if (pos>=0 && pos<quant) {
-			if (pos==quant-1) {
-				return this.ult;
-			}
-			aux = this.prim;
-			for (int i=0; i<pos; i++) {
-				aux = aux.getProx();
-			}
-			return aux;	
+		if (pos==quant-1) {
+			return this.ult;
 		}
+		aux = this.prim;
+		for (int i=0; i<pos; i++) {
+			aux = aux.getProx();
+		}
+		return aux;
+	}
 		return null; // se a posicao for invalida
 	}
 	
