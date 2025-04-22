@@ -12,6 +12,27 @@ public class LSEItem {
         this.quant = 0;
     }
 
+    public void setPrim(NoItem prim) {
+        this.prim = prim;
+    }
+
+    public NoItem getPrim() {
+        return this.prim;
+    }
+
+    public void setUlt(NoItem ult) {
+        this.ult = ult;
+    }
+
+    public NoItem getUlt() {
+        return this.ult;
+    }
+
+    public int getQuant() {
+        return this.quant;
+    }
+
+
     public int tamanho() {
         return this.quant;
     }
