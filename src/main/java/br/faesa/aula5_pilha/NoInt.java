@@ -9,16 +9,16 @@ public class NoInt {
         this.prox = null;
     }
 
-    private int getValor () {
+    public int getValor () {
         return this.valor;
     }
-    private void setValor (int valor) {
+    public void setValor (int valor) {
         this.valor = valor;
     }
-    private NoInt getProx () {
+    public NoInt getProx () {
         return this.prox;
     }
-    private void setProx (NoInt prox) {
+    public void setProx (NoInt prox) {
         this.prox = prox;
     }
 

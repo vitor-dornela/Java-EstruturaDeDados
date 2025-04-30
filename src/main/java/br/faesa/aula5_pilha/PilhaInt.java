@@ -9,6 +9,15 @@ public class PilhaInt {
         this.quant = 0;
     }
 
+    private boolean isEmpty() {
+        return this.top == null;
+        //return this.quant == 0;
+    }
+
+    private void push(int valor) {
+
+    }
+
 
 
 }
