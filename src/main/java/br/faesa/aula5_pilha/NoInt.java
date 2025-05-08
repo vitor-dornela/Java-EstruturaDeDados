@@ -1,28 +1,33 @@
 package br.faesa.aula5_pilha;
 
 public class NoInt {
-    private int valor;
-    private NoInt prox;
+	private int elemento;
+	private NoInt prox;
+	
+	// Construtor so recebe o objeto da classe Item
+	public NoInt(int elemento) {
+		this.elemento = elemento;
+		this.prox = null; 
+	}
 
-    public NoInt(int valor) {
-        this.valor = valor;
-        this.prox = null;
-    }
+	public int getElemento() {
+		return elemento;
+	}
 
-    public int getValor () {
-        return this.valor;
-    }
-    public void setValor (int valor) {
-        this.valor = valor;
-    }
-    public NoInt getProx () {
-        return this.prox;
-    }
-    public void setProx (NoInt prox) {
-        this.prox = prox;
-    }
+	public void setElemento(int elemento) {
+		this.elemento = elemento;
+	}
 
-    public String toString() {
-        return "Valor: " + this.valor + " Prox: " + this.prox;
-    }
+	public NoInt getProx() {
+		return prox;
+	}
+
+	public void setProx(NoInt prox) {
+		this.prox = prox;
+	}
+
+	@Override
+	public String toString() {
+		return "Elemento = "+elemento;
+	}
 }
