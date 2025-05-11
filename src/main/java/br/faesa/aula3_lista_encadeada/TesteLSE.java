@@ -11,8 +11,9 @@ public class TesteLSE {
 		lista.insereInicio(new Item(55));
 		lista.insereInicio(new Item(37));
 		lista.insereInicio(new Item(22));
-		
-		
+		lista.insere(new Item(89), 3);
+
+		System.out.println(lista);
 
 	}
 
