@@ -1,6 +1,7 @@
 package br.faesa.aula2_lista_contigua;
 
-import io.InOut;
+import br.faesa.io.InOut;
+
 import java.util.Random;
 
 public class UsaLCInteiro {

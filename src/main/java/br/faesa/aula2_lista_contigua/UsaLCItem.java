@@ -1,6 +1,6 @@
 package br.faesa.aula2_lista_contigua;
 
-import io.InOut;
+import br.faesa.io.InOut;
 
 
 public class UsaLCItem {

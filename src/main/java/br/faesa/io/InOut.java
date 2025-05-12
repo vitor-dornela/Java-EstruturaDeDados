@@ -1,5 +1,5 @@
 
-package io;
+package br.faesa.io;
 import javax.swing.JOptionPane;
 
 /**

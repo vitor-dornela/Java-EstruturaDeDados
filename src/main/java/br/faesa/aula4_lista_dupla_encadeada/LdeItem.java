@@ -1,0 +1,213 @@
+package br.faesa.aula4_lista_dupla_encadeada;
+
+import br.faesa.aula2_lista_contigua.Item;
+
+public class LdeItem {
+    private NoDupla prim, ult;
+    private int quant;
+
+    public LdeItem() {
+        this.prim = null;
+        this.ult = null;
+        this.quant = 0;
+    }
+
+    public NoDupla getPrim() {
+        return this.prim;
+    }
+
+    public NoDupla getUlt() {
+        return this.ult;
+    }
+
+    public int tamanho () {
+        return this.quant;
+    }
+
+    public boolean eVazia () {
+        return this.quant == 0;
+    }
+
+    public NoDupla pesquisa (int cod) {
+        NoDupla aux = this.prim;
+        while (aux != null) {
+            if (aux.getItem().getCodigo() == cod) {
+                return aux;
+            }
+            aux = aux.getProx();
+        }
+        return aux;
+    }
+
+    public void insereInicio (Item item) {
+        NoDupla no = new NoDupla(item);
+
+        if (this.eVazia()) {
+            this.ult = no;
+        } else {
+            no.setProx(this.prim);
+            this.prim.setAnt(no);
+        }
+        this.prim = no;
+        this.quant++;
+    }
+
+    public void insereFinal (Item item) {
+        NoDupla no = new NoDupla(item);
+        NoDupla aux;
+
+        if (this.eVazia()) {
+            this.prim = no;
+        } else {
+            this.ult.setProx(no);
+            no.setAnt(this.ult);
+        }
+        this.ult = no;
+        this.quant++;
+    }
+
+    public boolean insere (Item item, int pos) {
+        NoDupla aux;
+        NoDupla no = new NoDupla(item);
+
+        if (pos >= 0 && pos <= this.quant) {
+            if (pos == 0) {
+                this.insereInicio(item);
+            } else if (pos == this.quant - 1) {
+                this.insereFinal(item);
+            } else {
+                aux = this.get(pos - 1);
+                no.setProx(aux.getProx());
+                aux.getProx().setAnt(no);
+                aux.setProx(no);
+                no.setAnt(aux);
+                this.quant++;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public NoDupla removeInicio () {
+        NoDupla noRemovido;
+
+        if (this.eVazia()) {
+            return null;
+        }
+        noRemovido = this.prim;
+        this.prim = this.prim.getProx();
+        if (this.prim != null) {
+            this.prim.setAnt(null);
+        } else {
+            this.ult = null;
+        }
+        this.quant--;
+        return noRemovido;
+    }
+
+    public NoDupla removeFinal () {
+        NoDupla noRemovido, aux;
+
+        if (this.eVazia()) {
+            return null;
+        }
+        if (this.quant == 1) {
+            noRemovido = this.prim;
+            this.prim = null;
+            this.ult = null;
+        } else {
+            aux = this.get(this.quant - 2);
+            noRemovido = this.ult;
+            aux.setProx(null);
+            this.ult = aux;
+        }
+        this.quant--;
+        return noRemovido;
+    }
+
+    public NoDupla remove (int cod) {
+        NoDupla atual = this.prim;
+        NoDupla ant;
+
+        if (this.eVazia()) {
+            return null;
+        }
+        if (this.prim.getItem().getCodigo() == cod) {
+            return this.removeInicio();
+        }
+        ant = this.prim;
+        while (atual != null && atual.getItem().getCodigo() != cod) {
+            ant = atual;
+            atual = atual.getProx();
+        }
+        if (atual == null) {
+            return null;
+        }
+        if (atual == this.ult) {
+            return this.removeFinal();
+        }
+        ant.setProx(atual.getProx());
+        atual.getProx().setAnt(ant);
+        this.quant--;
+        return atual;
+    }
+
+    public NoDupla removePos (int pos) {
+        if (pos < 0 || pos >= this.quant) {
+            return null;
+        }
+        if (pos == 0) {
+            return this.removeInicio();
+        }
+        if (pos == this.quant - 1) {
+            return this.removeFinal();
+        }
+        NoDupla atual = this.get(pos);
+        NoDupla ant = this.get(pos - 1);
+        ant.setProx(atual.getProx());
+        atual.getProx().setAnt(ant);
+        this.quant--;
+        return atual;
+    }
+
+    public String toString() {
+        String temp = "";
+        NoDupla aux = this.prim;
+
+        while (aux != null) {
+            temp += aux.getItem() + "\n";
+            aux = aux.getProx();
+        }
+        return temp;
+    }
+
+    public String toStringInverso() {
+        String temp = "";
+        NoDupla aux = this.ult;
+
+        while (aux != null) {
+            temp += aux.getItem() + "\n";
+            aux = aux.getAnt();
+        }
+        return temp;
+    }
+
+    private NoDupla get (int pos) {
+        if (pos < 0 || pos >= this.quant) {
+            return null;
+        }
+        NoDupla aux;
+        if (pos < this.quant / 2) {
+            aux = this.prim;
+            for (int i = 0; i < pos; i++) {
+                aux = aux.getProx();
+            }
+        } else {
+            aux = this.ult;
+            for (int i = this.quant - 1; i > pos; i--) {
+                aux = aux.getAnt();
+            }
+        }
+        return aux;
+    }
+}
