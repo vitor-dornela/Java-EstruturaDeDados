@@ -17,6 +17,7 @@ public class Item {
     public int getCodigo() {
         return codigo;
     }
+
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
@@ -24,6 +25,7 @@ public class Item {
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }

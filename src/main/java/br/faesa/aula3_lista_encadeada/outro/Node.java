@@ -1,4 +1,4 @@
-package br.faesa.aula3_lista_encadeada;
+package br.faesa.aula3_lista_encadeada.outro;
 
 public class Node {
     String valor;

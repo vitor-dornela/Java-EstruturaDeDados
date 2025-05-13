@@ -1,4 +1,4 @@
-package br.faesa.aula3_lista_encadeada;
+package br.faesa.aula3_lista_encadeada.outro;
 
 public class Node_Principal {
     public static void main(String[] args) {

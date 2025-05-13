@@ -36,7 +36,7 @@ public class LdeItem {
             }
             aux = aux.getProx();
         }
-        return aux;
+        return null;
     }
 
     public void insereInicio (Item item) {

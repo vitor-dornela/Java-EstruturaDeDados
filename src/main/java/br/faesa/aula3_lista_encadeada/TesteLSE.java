@@ -13,8 +13,14 @@ public class TesteLSE {
 		lista.insereInicio(new Item(22));
 		lista.insere(new Item(89), 3);
 
-		System.out.println(lista);
+		//System.out.println(lista);
 
+		LSEItem Q = new LSEItem();
+		Q.insereInicio(new Item(12));
+		Q.getPrim().getItem().setCodigo(2*Q.getPrim().getItem().getCodigo());
+		Q.insereInicio(new Item(2*Q.getPrim().getItem().getCodigo()));
+
+		System.out.println(Q);
 	}
 
 }
