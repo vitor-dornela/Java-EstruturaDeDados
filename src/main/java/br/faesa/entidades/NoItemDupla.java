@@ -1,14 +1,12 @@
-package br.faesa.aula4_lista_dupla_encadeada;
-
-import br.faesa.entidades.Item;
+package br.faesa.entidades;
 
 
-public class NoDupla {
+public class NoItemDupla {
     private Item item;
-    private NoDupla ant;
-    private NoDupla prox;
+    private NoItemDupla ant;
+    private NoItemDupla prox;
 
-    public NoDupla(Item item) {
+    public NoItemDupla(Item item) {
         this.item = item;
         this.ant = null;
         this.prox = null;
@@ -22,19 +20,19 @@ public class NoDupla {
         this.item = item;
     }
 
-    public NoDupla getAnt() {
+    public NoItemDupla getAnt() {
         return ant;
     }
 
-    public void setAnt(NoDupla ant) {
+    public void setAnt(NoItemDupla ant) {
         this.ant = ant;
     }
 
-    public NoDupla getProx() {
+    public NoItemDupla getProx() {
         return prox;
     }
 
-    public void setProx(NoDupla prox) {
+    public void setProx(NoItemDupla prox) {
         this.prox = prox;
     }
 

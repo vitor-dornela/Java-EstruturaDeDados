@@ -1,9 +1,10 @@
 package br.faesa.aula4_lista_dupla_encadeada;
 
 import br.faesa.entidades.Item;
+import br.faesa.entidades.NoItemDupla;
 
 public class LdeItem {
-    private NoDupla prim, ult;
+    private NoItemDupla prim, ult;
     private int quant;
 
     public LdeItem() {
@@ -12,11 +13,11 @@ public class LdeItem {
         this.quant = 0;
     }
 
-    public NoDupla getPrim() {
+    public NoItemDupla getPrim() {
         return this.prim;
     }
 
-    public NoDupla getUlt() {
+    public NoItemDupla getUlt() {
         return this.ult;
     }
 
@@ -28,8 +29,8 @@ public class LdeItem {
         return this.quant == 0;
     }
 
-    public NoDupla pesquisa (int cod) {
-        NoDupla aux = this.prim;
+    public NoItemDupla pesquisa (int cod) {
+        NoItemDupla aux = this.prim;
         while (aux != null) {
             if (aux.getItem().getCodigo() == cod) {
                 return aux;
@@ -40,7 +41,7 @@ public class LdeItem {
     }
 
     public void insereInicio (Item item) {
-        NoDupla no = new NoDupla(item);
+        NoItemDupla no = new NoItemDupla(item);
 
         if (this.eVazia()) {
             this.ult = no;
@@ -53,8 +54,8 @@ public class LdeItem {
     }
 
     public void insereFinal (Item item) {
-        NoDupla no = new NoDupla(item);
-        NoDupla aux;
+        NoItemDupla no = new NoItemDupla(item);
+        NoItemDupla aux;
 
         if (this.eVazia()) {
             this.prim = no;
@@ -67,8 +68,8 @@ public class LdeItem {
     }
 
     public boolean insere (Item item, int pos) {
-        NoDupla aux;
-        NoDupla no = new NoDupla(item);
+        NoItemDupla aux;
+        NoItemDupla no = new NoItemDupla(item);
 
         if (pos >= 0 && pos <= this.quant) {
             if (pos == 0) {
@@ -88,8 +89,8 @@ public class LdeItem {
         return false;
     }
 
-    public NoDupla removeInicio () {
-        NoDupla noRemovido;
+    public NoItemDupla removeInicio () {
+        NoItemDupla noRemovido;
 
         if (this.eVazia()) {
             return null;
@@ -105,8 +106,8 @@ public class LdeItem {
         return noRemovido;
     }
 
-    public NoDupla removeFinal () {
-        NoDupla noRemovido, aux;
+    public NoItemDupla removeFinal () {
+        NoItemDupla noRemovido, aux;
 
         if (this.eVazia()) {
             return null;
@@ -125,9 +126,9 @@ public class LdeItem {
         return noRemovido;
     }
 
-    public NoDupla remove (int cod) {
-        NoDupla atual = this.prim;
-        NoDupla ant;
+    public NoItemDupla remove (int cod) {
+        NoItemDupla atual = this.prim;
+        NoItemDupla ant;
 
         if (this.eVazia()) {
             return null;
@@ -152,7 +153,7 @@ public class LdeItem {
         return atual;
     }
 
-    public NoDupla removePos (int pos) {
+    public NoItemDupla removePos (int pos) {
         if (pos < 0 || pos >= this.quant) {
             return null;
         }
@@ -162,8 +163,8 @@ public class LdeItem {
         if (pos == this.quant - 1) {
             return this.removeFinal();
         }
-        NoDupla atual = this.get(pos);
-        NoDupla ant = this.get(pos - 1);
+        NoItemDupla atual = this.get(pos);
+        NoItemDupla ant = this.get(pos - 1);
         ant.setProx(atual.getProx());
         atual.getProx().setAnt(ant);
         this.quant--;
@@ -172,7 +173,7 @@ public class LdeItem {
 
     public String toString() {
         String temp = "";
-        NoDupla aux = this.prim;
+        NoItemDupla aux = this.prim;
 
         while (aux != null) {
             temp += aux.getItem() + "\n";
@@ -183,7 +184,7 @@ public class LdeItem {
 
     public String toStringInverso() {
         String temp = "";
-        NoDupla aux = this.ult;
+        NoItemDupla aux = this.ult;
 
         while (aux != null) {
             temp += aux.getItem() + "\n";
@@ -192,11 +193,11 @@ public class LdeItem {
         return temp;
     }
 
-    private NoDupla get (int pos) {
+    private NoItemDupla get (int pos) {
         if (pos < 0 || pos >= this.quant) {
             return null;
         }
-        NoDupla aux;
+        NoItemDupla aux;
         if (pos < this.quant / 2) {
             aux = this.prim;
             for (int i = 0; i < pos; i++) {

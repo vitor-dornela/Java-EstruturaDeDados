@@ -1,4 +1,4 @@
-package br.faesa.aula3_lista_encadeada.exercicios;
+package br.faesa.aula2_lista_contigua.exercicios;
 
 import br.faesa.aula2_lista_contigua.LCInteiro;
 

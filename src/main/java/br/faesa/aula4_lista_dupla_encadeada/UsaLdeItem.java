@@ -1,6 +1,7 @@
 package br.faesa.aula4_lista_dupla_encadeada;
 
 import br.faesa.entidades.Item;
+import br.faesa.entidades.NoItemDupla;
 import br.faesa.io.InOut;
 
 public class UsaLdeItem {
@@ -37,7 +38,7 @@ public class UsaLdeItem {
                 }
                 case 3: {
                     int codP = InOut.leInt("Código a pesquisar:");
-                    NoDupla ach = lista.pesquisa(codP);
+                    NoItemDupla ach = lista.pesquisa(codP);
                     if (ach != null) {
                         InOut.msgSemIcone("Resultado", "Encontrado: " + ach.getItem());
                     } else {
@@ -47,7 +48,7 @@ public class UsaLdeItem {
                 }
                 case 4: {
                     int pos = InOut.leInt("Posição a remover (0 a " + (lista.tamanho() - 1) + "):");
-                    NoDupla rem = lista.removePos(pos);
+                    NoItemDupla rem = lista.removePos(pos);
                     if (rem != null) {
                         InOut.msgSemIcone("Sucesso", "Removido: " + rem.getItem());
                     } else {
