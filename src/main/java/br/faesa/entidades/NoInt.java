@@ -1,4 +1,4 @@
-package br.faesa.aula5_pilha;
+package br.faesa.entidades;
 
 public class NoInt {
 	private int elemento;

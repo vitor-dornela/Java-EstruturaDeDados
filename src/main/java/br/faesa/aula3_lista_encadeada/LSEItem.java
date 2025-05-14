@@ -1,6 +1,7 @@
 package br.faesa.aula3_lista_encadeada;
 
-import br.faesa.aula2_lista_contigua.Item;
+import br.faesa.entidades.Item;
+import br.faesa.entidades.NoItem;
 
 public class LSEItem {
     private NoItem prim, ult;
@@ -16,12 +17,20 @@ public class LSEItem {
         return prim;
     }
 
+    public void setPrim(NoItem prim) {
+        this.prim = prim;
+    }
+
     public NoItem getUlt() {
         return ult;
     }
 
     public void setUlt(NoItem ult) {
         this.ult = ult;
+    }
+
+    public int getQuant() {
+        return quant;
     }
 
     public int tamanho () {
@@ -184,6 +193,17 @@ public class LSEItem {
 
     }
 
+    public LSEItem copia() {
+        LSEItem copia = new LSEItem();
+        NoItem aux;
+        aux = this.prim;
+        while (aux!=null) {
+            copia.insereFinal(new Item(aux.getItem().getCodigo(), aux.getItem().getNome()));
+            aux = aux.getProx();
+        }
+        return copia;
+    }
+
     public String toString() {
         String temp="";
         NoItem aux = this.prim;
@@ -193,6 +213,11 @@ public class LSEItem {
             aux = aux.getProx();
         }
         return temp;
+    }
+
+    public Item getItem(int pos) {
+        NoItem no = get(pos);         // já existente, retorna o nó
+        return (no != null ? no.getItem() : null);
     }
 
 }

@@ -1,6 +1,4 @@
-package br.faesa.aula3_lista_encadeada;
-
-import br.faesa.aula2_lista_contigua.Item;
+package br.faesa.entidades;
 
 public class NoItem {
 	private Item item;

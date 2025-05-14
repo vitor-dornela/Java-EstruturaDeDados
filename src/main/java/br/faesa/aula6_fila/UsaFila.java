@@ -9,7 +9,7 @@ números maiores que 10.
  */
 
 
-import br.faesa.aula5_pilha.NoInt;
+import br.faesa.entidades.NoInt;
 
 import java.util.Random;
 

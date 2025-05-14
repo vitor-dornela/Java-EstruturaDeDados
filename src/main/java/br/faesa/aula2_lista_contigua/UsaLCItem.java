@@ -1,5 +1,6 @@
 package br.faesa.aula2_lista_contigua;
 
+import br.faesa.entidades.Item;
 import br.faesa.io.InOut;
 
 

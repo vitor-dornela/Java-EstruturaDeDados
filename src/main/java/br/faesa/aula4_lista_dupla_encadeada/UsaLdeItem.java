@@ -1,6 +1,6 @@
 package br.faesa.aula4_lista_dupla_encadeada;
 
-import br.faesa.aula2_lista_contigua.Item;
+import br.faesa.entidades.Item;
 import br.faesa.io.InOut;
 
 public class UsaLdeItem {
