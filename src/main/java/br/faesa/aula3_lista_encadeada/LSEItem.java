@@ -20,12 +20,22 @@ public class LSEItem {
         return ult;
     }
 
+    public void setUlt(NoItem ult) {
+        this.ult = ult;
+    }
+
     public int tamanho () {
         return this.quant;
     }
 
     public boolean eVazia() {
         return (quant==0);
+    }
+
+    public void limpa() {
+        this.prim = null;
+        this.ult = null;
+        this.quant = 0;
     }
 
     public NoItem get (int pos) {
