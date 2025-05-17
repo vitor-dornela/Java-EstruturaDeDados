@@ -13,11 +13,13 @@ public class UsaLdeItem {
             String menu = "Menu LDE \n"
                     + "1 – Inserir um nó no final da lista\n"
                     + "2 – Inserir um nó no início da lista\n"
-                    + "3 – Pesquisar na lista\n"
-                    + "4 – Remover uma posição da lista\n"
-                    + "5 – Imprimir a lista\n"
-                    + "6 – Imprimir a lista invertida\n"
-                    + "7 – Sair\n\n"
+                    + "3 – Inserir um nó numa posição da lista\n"
+                    + "4 – Pesquisar na lista\n"
+                    + "5 – Remover uma posição da lista\n"
+                    + "6 – Remover um código da lista\n"
+                    + "7 – Imprimir a lista\n"
+                    + "8 – Imprimir a lista invertida\n"
+                    + "9 – Sair\n\n"
                     + "Escolha uma opção:";
             opc = InOut.leInt(menu);
 
@@ -37,6 +39,18 @@ public class UsaLdeItem {
                     break;
                 }
                 case 3: {
+                    int codIP = InOut.leInt("Código do item:");
+                    String descIP = InOut.leString("Descrição do item:");
+                    int pos = InOut.leInt("Posição a inserir (0 a " + (lista.tamanho() - 1) + "):");
+                    boolean ins = lista.insere(new Item(codIP,descIP), pos);
+                    if (ins != false) {
+                        InOut.msgSemIcone("Sucesso", "Nó inserido em " + pos +".");
+                    } else {
+                        InOut.msgSemIcone("Falha", "Posição fora da lista.");
+                    }
+                    break;
+                }
+                case 4: {
                     int codP = InOut.leInt("Código a pesquisar:");
                     NoItemDupla ach = lista.pesquisa(codP);
                     if (ach != null) {
@@ -46,7 +60,7 @@ public class UsaLdeItem {
                     }
                     break;
                 }
-                case 4: {
+                case 5: {
                     int pos = InOut.leInt("Posição a remover (0 a " + (lista.tamanho() - 1) + "):");
                     NoItemDupla rem = lista.removePos(pos);
                     if (rem != null) {
@@ -56,18 +70,28 @@ public class UsaLdeItem {
                     }
                     break;
                 }
-                case 5:
+                case 6: {
+                    int cod = InOut.leInt("Código a remover:");
+                    NoItemDupla remCod = lista.removeCod(cod);
+                    if (remCod != null) {
+                        InOut.msgSemIcone("Sucesso", "Removido: " + remCod.getItem());
+                    } else {
+                        InOut.msgSemIcone("Erro", "Código inexistente.");
+                    }
+                    break;
+                }
+                case 7:
                     InOut.msgSemIcone("Lista", lista.toString());
                     break;
-                case 6:
+                case 8:
                     InOut.msgSemIcone("Lista Invertida", lista.toStringInverso());
                     break;
-                case 7:
+                case 9:
                     InOut.msgSemIcone("Saindo", "Encerrando o programa.");
                     break;
                 default:
                     InOut.msgSemIcone("Erro", "Opção inválida.");
             }
-        } while (opc != 7);
+        } while (opc != 9);
     }
 }

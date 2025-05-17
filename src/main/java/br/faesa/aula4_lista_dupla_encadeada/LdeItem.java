@@ -126,7 +126,7 @@ public class LdeItem {
         return noRemovido;
     }
 
-    public NoItemDupla remove (int cod) {
+    public NoItemDupla removeCod (int cod) {
         NoItemDupla atual = this.prim;
         NoItemDupla ant;
 
