@@ -74,7 +74,7 @@ public class LdeItem {
         if (pos >= 0 && pos <= this.quant) {
             if (pos == 0) {
                 this.insereInicio(item);
-            } else if (pos == this.quant - 1) {
+            } else if (pos == this.quant) {
                 this.insereFinal(item);
             } else {
                 aux = this.get(pos - 1);

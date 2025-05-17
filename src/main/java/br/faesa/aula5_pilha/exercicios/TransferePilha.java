@@ -56,7 +56,7 @@ public class TransferePilha {
         if (pilha.isEmpty()) {
             return;
         }
-        if (pil %2 == 0)
+        //if (pil %2 == 0)
 
     }
 

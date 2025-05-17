@@ -41,7 +41,7 @@ public class UsaLdeItem {
                 case 3: {
                     int codIP = InOut.leInt("Código do item:");
                     String descIP = InOut.leString("Descrição do item:");
-                    int pos = InOut.leInt("Posição a inserir (0 a " + (lista.tamanho() - 1) + "):");
+                    int pos = InOut.leInt("Posição a inserir (0" + (lista.tamanho() == 0 ? ")":" a " + lista.tamanho() + ")"));
                     boolean ins = lista.insere(new Item(codIP,descIP), pos);
                     if (ins != false) {
                         InOut.msgSemIcone("Sucesso", "Nó inserido em " + pos +".");
