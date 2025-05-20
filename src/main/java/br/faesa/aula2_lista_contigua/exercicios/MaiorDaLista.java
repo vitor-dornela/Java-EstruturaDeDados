@@ -19,10 +19,10 @@ public class MaiorDaLista {
 
 	public static void preenche(LCInteiro lista) {
 		
-		int quant, num;
+		int num;
 		
-		System.out.println(" entre com a quantidade de elementos da lista: ");
-		quant = scan.nextInt();
+		System.out.println("Entre com a quantidade de elementos da lista: ");
+        int quant = scan.nextInt();
 		
 		for (int i=0; i<quant; i++) {
 			num = (int)(Math.random()*50)+1;
