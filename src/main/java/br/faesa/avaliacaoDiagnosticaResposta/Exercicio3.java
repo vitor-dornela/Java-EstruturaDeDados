@@ -1,17 +1,17 @@
-package diagnostico;
+package br.faesa.avaliacaoDiagnosticaResposta;
 
 import java.util.Scanner;
 
 /*
- * 3) Faça um programa em Java que:
-a) instancie um vetor de 20 posições. 
-b) preencha o vetor: deve pedir ao usuário se quer 
+ * 3) Faï¿½a um programa em Java que:
+a) instancie um vetor de 20 posiï¿½ï¿½es. 
+b) preencha o vetor: deve pedir ao usuï¿½rio se quer 
 inserir mais um. Deve parar de preencher se:
-   • o vetor estiver cheio, nesse caso, deve mostrar uma 
+   ï¿½ o vetor estiver cheio, nesse caso, deve mostrar uma 
      mensagem na tela, 
-   • o usuário não quiser mais inserir. 
+   ï¿½ o usuï¿½rio nï¿½o quiser mais inserir. 
 c) mostre na tela todos os elementos do vetor
-Obs.: Os itens (b) e (c) devem ser métodos
+Obs.: Os itens (b) e (c) devem ser mï¿½todos
  */
 public class Exercicio3 {
 

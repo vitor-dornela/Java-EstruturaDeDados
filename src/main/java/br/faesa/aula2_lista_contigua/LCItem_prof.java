@@ -1,6 +1,8 @@
 package br.faesa.aula2_lista_contigua;
 
 
+import br.faesa.entidades.Item;
+
 public class LCItem_prof {
 /*
  * atributos: lista (array de Itens) e 

@@ -1,5 +1,4 @@
 package br.faesa.avaliacaoC1;
-import br.faesa.aula2_lista_contigua.Item;
 import br.faesa.aula2_lista_contigua.LCInteiro;
 
 import java.util.Scanner;

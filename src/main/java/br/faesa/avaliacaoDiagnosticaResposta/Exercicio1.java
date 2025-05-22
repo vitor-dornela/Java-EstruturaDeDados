@@ -1,4 +1,4 @@
-package diagnostico;
+package br.faesa.avaliacaoDiagnosticaResposta;
 
 import java.util.Scanner;
 

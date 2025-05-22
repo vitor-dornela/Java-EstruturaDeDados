@@ -1,6 +1,7 @@
 package br.faesa.aula3_lista_encadeada;
 
-import br.faesa.aula2_lista_contigua.Item;
+import br.faesa.entidades.Item;
+import br.faesa.entidades.NoItem;
 
 public class LSEItem {
     private NoItem prim, ult;
@@ -16,10 +17,21 @@ public class LSEItem {
         return prim;
     }
 
+    public void setPrim(NoItem prim) {
+        this.prim = prim;
+    }
+
     public NoItem getUlt() {
         return ult;
     }
 
+    public void setUlt(NoItem ult) {
+        this.ult = ult;
+    }
+
+    public int getQuant() {
+        return quant;
+    }
 
     public int tamanho () {
         return this.quant;
@@ -27,6 +39,12 @@ public class LSEItem {
 
     public boolean eVazia() {
         return (quant==0);
+    }
+
+    public void limpa() {
+        this.prim = null;
+        this.ult = null;
+        this.quant = 0;
     }
 
     public NoItem get (int pos) {
@@ -110,7 +128,7 @@ public class LSEItem {
         noRemovido = this.prim;
         this.prim = this.prim.getProx();
         this.quant--;
-        if (this.quant==0) {
+        if (this.quant==0) {  //revisar isso aqui, acredito que nunca entra aqui
             this.ult = null;
         }
         return noRemovido;
@@ -136,6 +154,56 @@ public class LSEItem {
         return noRemovido;
     }
 
+    public NoItem remove (int cod) {
+        NoItem atual = this.prim;
+        NoItem ant;
+
+        if (eVazia()) {
+            return null;
+        }
+        if (this.prim.getItem().getCodigo()==cod) {
+            return this.removeInicio();
+        }
+        while (atual!= null) {
+            ant = atual;
+            atual = atual.getProx();
+            if (atual.getItem().getCodigo()==cod) {
+                ant.setProx(atual.getProx());
+                this.quant--;
+                return atual;
+            }
+        }
+        return null;
+    }
+
+    public NoItem removePos (int pos) {
+        NoItem atual;
+        NoItem ant;
+        if (pos<0 || pos>=this.quant) {
+            return null;
+        }
+        if (pos==0) {
+            return removeInicio();
+        }
+        atual = get(pos);
+        ant = get(pos-1);
+        ant.setProx(atual.getProx());
+        this.quant--;
+        return atual;
+
+    }
+
+    public LSEItem copia() {
+        LSEItem copia = new LSEItem();
+        NoItem aux;
+        aux = this.prim;
+        while (aux!=null) {
+            copia.insereFinal(new Item(aux.getItem().getCodigo(), aux.getItem().getNome()));
+            aux = aux.getProx();
+        }
+        return copia;
+    }
+
     public String toString() {
         String temp="";
         NoItem aux = this.prim;
@@ -147,17 +215,9 @@ public class LSEItem {
         return temp;
     }
 
-
-
-	/*
-	public Integer remove (int cod) {
-
-	}
-
-	public Integer removePos (int pos) {
-
-	}
-
-*/
+    public Item getItem(int pos) {
+        NoItem no = get(pos);         // já existente, retorna o nó
+        return (no != null ? no.getItem() : null);
+    }
 
 }

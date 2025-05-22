@@ -1,5 +1,6 @@
 package br.faesa.aula6_fila;
-import br.faesa.aula5_pilha.NoInt;
+
+import br.faesa.entidades.NoInt;
 
 public class FilaInt {
 	/*

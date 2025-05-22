@@ -1,5 +1,7 @@
 package br.faesa.aula2_lista_contigua;
 
+import br.faesa.entidades.Item;
+
 public class LCItem {
 
     private Item[] lista;
@@ -58,7 +60,7 @@ public class LCItem {
         this.lista = novaLista;
     }
 
-    public void insereFim (Item item) {
+    public void insereFinal (Item item) {
         if (eCheia()) {
             aumentaLista();
         }

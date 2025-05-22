@@ -1,5 +1,7 @@
 package br.faesa.aula5_pilha;
 
+import br.faesa.entidades.NoInt;
+
 public class PilhaInt {
 /*
  * Atributos
