@@ -16,6 +16,9 @@ public class VerificaCaracter {
 
         carac = aux.charAt(0);
         carac = Character.toUpperCase(carac);
+
+        // Chama mét.odo iterativo
+        System.out.print("Usando método iterativo: ");
         if (pertenceIterativa(frase, carac)) {
             System.out.println("Caracter " + carac + " está presente!");
         }
@@ -23,7 +26,8 @@ public class VerificaCaracter {
             System.out.println("Caracter não está presente!");
         }
 
-
+        // Chama mét.odo recursivo
+        System.out.print("Usando método recursivo: ");
         if (pertenceRecursiva(frase, carac)) {
             System.out.println("Caracter " + carac + " está presente!");
         }
