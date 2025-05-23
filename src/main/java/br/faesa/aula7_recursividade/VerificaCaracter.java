@@ -3,7 +3,7 @@ package br.faesa.aula7_recursividade;
 import java.util.Scanner;
 
 public class VerificaCaracter {
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         String frase, aux;
         char carac;
