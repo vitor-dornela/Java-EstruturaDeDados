@@ -1,7 +1,7 @@
 package br.faesa.entidades;
 
 public class NoArv {
-    private int num;
+    private Integer num;
     private NoArv esq;
     private NoArv dir;
 
@@ -27,8 +27,8 @@ public class NoArv {
         this.dir = dir;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public Integer getNum() {
+        return num;
     }
 
     @Override
