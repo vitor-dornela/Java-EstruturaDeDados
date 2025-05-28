@@ -20,4 +20,20 @@ public class ABBInt {
         this.quant = 0;
     }
 
+    public NoArv pesquisa(int num) {
+        return pesquisa(num, this.raiz);
+    }
+
+    private NoArv pesquisa (int num, NoArv no) {
+        if (no == null) {
+            return null;
+        }
+        if (num == no.getNum()) {
+            return no;
+        }
+        if (num > no.getNum()) {
+            return pesquisa(num, no.getDir());
+        }
+    }
+
 }
