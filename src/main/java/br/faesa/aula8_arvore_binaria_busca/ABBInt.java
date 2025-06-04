@@ -34,6 +34,61 @@ public class ABBInt {
         if (num > no.getNum()) {
             return pesquisa(num, no.getDir());
         }
+        return pesquisa(num, no.getEsq());
     }
+
+    public boolean insere (int num) {
+        if (pesquisa(num) == null) {
+            this.raiz = insere(num, this.raiz);
+            return true;
+        }
+        return false;
+    }
+
+    private NoArv insere (int num, NoArv no) {
+        if (no == null) {
+            NoArv novo = new NoArv(num);
+            this.quant++;
+            return novo;
+        }
+        if (num < no.getNum()) {
+            no.setEsq(insere(num, no.getEsq()));
+        }
+        else if (num > no.getNum()) {
+            no.setDir(insere(num, no.getDir()));
+        }
+        return no;
+    }
+
+    private NoArv remove (int num, NoArv no) {
+        if (no == null) {
+            return null;
+        }
+        if (num < no.getNum()) {
+            no.setEsq(remove(num, no.getEsq()));
+        } else if (num > no.getNum()) {
+            no.setDir(remove(num, no.getDir()));
+        } else if (no.getDir() == null) {
+            quant--;
+            return no.getEsq();
+        } else if (no.getEsq() == null) {
+            quant--;
+            return no.getDir();
+        } else {
+            no.setEsq(maiorEsq());
+
+        }
+        return null;
+    }
+
+    private NoArv maiorEsq(NoArv noRemovido, NoArv maior) {
+        if (maior.getDir() == null) {
+            maior.setDir(maiorEsq(noRemovido, maior.getDir()));
+            return maior;
+        }
+        noRemovido.setNum(maior.getNum());
+        return maior.getEsq();
+    }
+
 
 }
