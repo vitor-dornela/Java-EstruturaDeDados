@@ -2,21 +2,12 @@ package br.faesa.entidades;
 
 public class NoArv {
     private Integer num;
-    private NoArv esq;
-    private NoArv dir;
+    private NoArv dir, esq;
 
-    public NoArv(int elemento) {
-        this.num = elemento;
-        this.esq = null;
+    public NoArv(Integer num) {
+        this.num = num;
         this.dir = null;
-    }
-
-    public NoArv getEsq() {
-        return esq;
-    }
-
-    public void setEsq(NoArv esq) {
-        this.esq = esq;
+        this.esq = null;
     }
 
     public NoArv getDir() {
@@ -27,16 +18,26 @@ public class NoArv {
         this.dir = dir;
     }
 
+    public NoArv getEsq() {
+        return esq;
+    }
+
+    public void setEsq(NoArv esq) {
+        this.esq = esq;
+    }
+
     public Integer getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum (int num) {
         this.num = num;
     }
 
-    @Override
-    public String toString() {
+    public String toString () {
         return ""+this.num;
     }
+
+
+
 }
