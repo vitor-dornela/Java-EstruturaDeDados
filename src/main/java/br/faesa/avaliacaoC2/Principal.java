@@ -1,7 +1,19 @@
 package br.faesa.avaliacaoC2;
 
-//import java.util.Random;
+/* Enunciado da prova
+Usando as classes: NoInt.java, LSEInteiro.java, PilhaInt.java e FilaInt.java, faça um programa que, usando métodos,
+
+(0,5) a) Preencha uma Pilha com 10 elementos (deve ser um mét.odo)
+(0,25) b) Preencha uma LSE com os elementos da Pilha que estão na posição par. No final do mét.odo a pilha deve permanecer como no início do mét.odo (deve ser um mét.odo)
+(0,25) c) Preencha uma Fila com os outros elementos da Pilha. No final do méto.do a pilha deve permanecer como no início do mét.odo (deve ser um mét.odo)
+(0,5) d) Some todos os elementos da LSE
+(0,5) e) Encontre o maior elemento da Pilha, mas a Pilha não pode ser destruída nem alterada
+(0,5) f) Peça ao usuário um número e mostre quantas vezes ele aparece na Fila, mas a Fila não pode ser destruída nem alterada
+(0,5) g) Imprima no Programa Principal as 3 estruturas e os resultados dos itens d, e, f.
+ */
+
 import java.util.Scanner;
+import java.util.Random;
 import br.faesa.entidades.NoInt;
 import br.faesa.aula5_pilha.PilhaInt;
 import br.faesa.aula3_lista_encadeada.LSEInteiro;
