@@ -1,6 +1,6 @@
 package br.faesa.aula8_arvores;
 
-import entidades.NoArv;
+import br.faesa.entidades.NoArv;
 import br.faesa.aula2_lista_contigua.LCInteiro;
 
 public class ABBInt {
