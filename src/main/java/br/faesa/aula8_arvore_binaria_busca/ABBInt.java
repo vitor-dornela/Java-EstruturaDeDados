@@ -180,9 +180,9 @@ public class ABBInt {
 
 
 	// b) Maior elemento da ABB
-	public int maior() {
+	public Object maior() {
 		if (raiz == null) {
-			return 0;
+			return null;
 		}
 		// inicializa o acumulador com o valor da raiz
 		return maior(raiz, raiz.getNum());
