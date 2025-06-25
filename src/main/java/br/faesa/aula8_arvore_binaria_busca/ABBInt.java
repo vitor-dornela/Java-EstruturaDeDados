@@ -201,6 +201,49 @@ public class ABBInt {
 		return maior(no.getDir(), maxAtual);
 	}
 
+	// em ABBInt.java
+
+	/** Retorna a altura da ABB (número de níveis) */
+	public int altura() {
+		return altura(raiz);
+	}
+
+	private int altura(NoArv no) {
+		if (no == null) {
+			return -1;                      // nenhuma no, altura 0
+		}
+		// calcula altura das sub-árvores
+		int he = altura(no.getEsq());
+		int hd = altura(no.getDir());
+		// o nível atual + maior entre esquerda e direita
+		return 1 + Math.max(he, hd);
+	}
+
+	/**
+	 * Retorna um array de LCInteiro, onde cada posição i contém
+	 * os valores dos nós no nível i (0 = raiz), até altura h.
+	 */
+	public LCInteiro[] nosPorNivel() {
+		int h = altura();
+		// capacidade = total de nós (usamos CamInOrdem())
+		int total = CamInOrdem().getQuant();
+		LCInteiro[] níveis = new LCInteiro[h+1];
+		for (int i = 0; i <= h; i++) {
+			níveis[i] = new LCInteiro(total);
+		}
+		preenchePorNivel(raiz, 0, níveis);
+		return níveis;
+	}
+
+	private void preenchePorNivel(NoArv no, int lvl, LCInteiro[] níveis) {
+		if (no == null) return;
+		níveis[lvl].insereFinal(no.getNum());
+		preenchePorNivel(no.getEsq(), lvl+1, níveis);
+		preenchePorNivel(no.getDir(), lvl+1, níveis);
+	}
+
+
+
 
 
 
