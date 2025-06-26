@@ -163,10 +163,7 @@ public class ABBInt {
 		}
 	}
 
-
-
-
-	// a) Soma de todos os nós da ABB
+	/** Soma de todos os nós da ABB */
 	public int soma() {
 		return soma(raiz);
 	}
@@ -179,7 +176,7 @@ public class ABBInt {
 	}
 
 
-	// b) Maior elemento da ABB
+	/**  Maior elemento da ABB */
 	public Object maior() {
 		if (raiz == null) {
 			return null;
@@ -200,8 +197,6 @@ public class ABBInt {
 		maxAtual = maior(no.getEsq(), maxAtual);
 		return maior(no.getDir(), maxAtual);
 	}
-
-	// em ABBInt.java
 
 	/** Retorna a altura da ABB (número de níveis) */
 	public int altura() {
