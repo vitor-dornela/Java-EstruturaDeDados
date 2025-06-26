@@ -55,6 +55,11 @@ Uma Árvore Binária de Busca completa para armazenar e gerenciar dados:
 - Balanceamento automático para otimização da estrutura.
 - Criação de subárvores contendo apenas elementos pares ou ímpares.
 
+Links para auxiliar no aprendizado:
+- [Criando árvore manualmente](https://www.canva.com/design/DAGqFsACsPk/VcdoJMVpVDGR2Y5LjNPijw/edit?utm_content=DAGqFsACsPk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) - Feito no Canva.
+- [Criando árvore automaticamente](https://treeconverter.com/?input=+48,+30,+15,+10,+34,+27,+53,+21,+18+,45) - Rápida visualização. Necessário trocar input para _binary search tree_.
+- [Tutorial interativo](https://kubokovac.eu/gnarley-trees/BST.html) - Serve para adicionar, remover e pesquisar elementos.
+
 ---
 
 ## Como Executar
